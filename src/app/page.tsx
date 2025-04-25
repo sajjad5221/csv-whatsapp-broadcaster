@@ -91,15 +91,20 @@ export default function Home() {
 
         {/* Section 3: Send Message (only show if contacts are loaded and no error) */}
         {contacts.length > 0 && !csvError && (
-           <section className="bg-white p-6 rounded-lg shadow-md">
-             <h2 className="text-xl font-semibold mb-4 text-gray-700">3. Compose & Send WhatsApp Message</h2>
-             <WhatsAppMessenger
-              contacts={contactsToSend} // Pass only selected contacts
+          <section className="bg-white p-6 rounded-lg shadow-md">
+            <h2 className="text-xl font-semibold mb-4 text-gray-700">3. Compose & Send WhatsApp Message</h2>
+            <WhatsAppMessenger
+              contacts={contactsToSend}
               message={message}
               onMessageChange={setMessage}
             />
           </section>
         )}
+
+        {/* Footer with credits */}
+        <footer className="text-center py-6 text-sm text-gray-600">
+          Created with ❤️ by <a href="https://github.com/sajjad5221" className="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener noreferrer">Sajjad</a>
+        </footer>
       </div>
     </main>
   );
